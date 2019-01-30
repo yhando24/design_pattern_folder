@@ -1,10 +1,10 @@
-package patter_strategie;
+package factory.oneObject;
 
 public class Personnage {
 
 	private String nom;
 	private String classe;
-	private Attack attack;
+	private IArme arme;
 	
 	
 	
@@ -26,13 +26,13 @@ public class Personnage {
 		this.classe = classe;
 	}
 
-	public void setAttack(Attack attack) {
-		this.attack = attack;
+	public void setArme() {
+		this.arme = Factory.creationPistolet();
 	}
 	
 	
 	public void lanceAttaque() {
-		System.out.println(getNom() + " de type " + getClasse() + " lance une attaque et inflige "+ this.attack.attaquer() + " points de dégats");
+		System.out.println(getNom() + " de type " + getClasse() + " lance une attaque et inflige "+ this.arme.tirer() + " points de dégats");
 	}
 	
 }
